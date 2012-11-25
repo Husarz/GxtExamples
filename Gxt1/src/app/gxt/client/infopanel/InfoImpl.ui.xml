@@ -1,0 +1,35 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button">
+
+	<ui:image field="loadergif" src="../bundle/images/ajax-loader-big.gif" />
+	<ui:style>
+		@sprite .loader {
+			gwt-image: "loadergif";
+			margin:auto;
+			margin-top: 30px;
+		}
+		.important{
+			text-align: center;
+			padding-top: 20px;
+		}
+	</ui:style>
+<!-- 	<ui:with field='res' type='app.gxt.client.bundle.AppBundle' /> -->
+	
+
+	<gxt:Window ui:field="window" pixelSize="335, 210" modal="true"
+		blinkModal="true" closable="false">
+		<gxt:ContentPanel headerVisible="false">
+			<g:HTML styleName="{style.important}">
+						<span class="{style.important}" ui:field="span" />
+						<div class='{style.loader}' />
+			</g:HTML>
+		</gxt:ContentPanel>
+		<gxt:button>
+			<button:TextButton ui:field="closeButton" text="Close" />
+		</gxt:button>
+	</gxt:Window>
+
+</ui:UiBinder> 
