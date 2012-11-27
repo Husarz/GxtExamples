@@ -1,7 +1,9 @@
 package app.gxt.client;
 
+
 import app.gxt.client.infopanel.Info;
 import app.gxt.client.infopanel.InfoImpl;
+import app.gxt.client.infopanel.grid.GridImpl;
 import app.gxt.client.service.AppService;
 import app.gxt.client.service.AppServiceAsync;
 import app.gxt.client.widgetupload.FileUploadExample;
@@ -30,7 +32,8 @@ public class Gxt1 implements EntryPoint {
 		// RootPanel.get().add(popup);
 		// popup.show();
 
-		RootPanel.get().add(new FileUploadExample().asWidget());
+//		RootPanel.get().add(new FileUploadExample().asWidget());
+		RootPanel.get().add(new GridImpl().asWidget());
 	}
 
 	String result;

@@ -1,5 +1,7 @@
 package app.gxt.client.infopanel;
 
+
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.SpanElement;
 import com.google.gwt.safehtml.shared.SafeHtml;
