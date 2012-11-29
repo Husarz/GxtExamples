@@ -1,12 +1,13 @@
 package app.gxt.client;
 
 
+import app.gxt.client.bindsforms.UserBindForm;
+import app.gxt.client.bindsforms.UserBindView;
 import app.gxt.client.infopanel.Info;
 import app.gxt.client.infopanel.InfoImpl;
-import app.gxt.client.infopanel.grid.GridImpl;
 import app.gxt.client.service.AppService;
 import app.gxt.client.service.AppServiceAsync;
-import app.gxt.client.widgetupload.FileUploadExample;
+import app.gxt.shared.model.User;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -27,13 +28,18 @@ public class Gxt1 implements EntryPoint {
 	AppServiceAsync service = (AppServiceAsync) GWT.create(AppService.class);
 	Info info = InfoImpl.getInst();
 
+	User user = new User("adi", "adi@adi.pl", "123456");
+	
 	public void onModuleLoad() {
 		// MessageBox popup = new MessageBox("OK", "Hello World");
 		// RootPanel.get().add(popup);
 		// popup.show();
+		UserBindView view = new UserBindForm();
 
 //		RootPanel.get().add(new FileUploadExample().asWidget());
-		RootPanel.get().add(new GridImpl().asWidget());
+//		RootPanel.get().add(new GridImpl().asWidget());
+		RootPanel.get().add(view.asWidget());
+		view.setData(user);
 	}
 
 	String result;

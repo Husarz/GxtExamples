@@ -1,6 +1,8 @@
 package app.gxt.shared.model;
 
-public enum AppModel {
+import com.google.gwt.user.client.rpc.IsSerializable;
+
+public enum AppModel implements IsSerializable{
 	SNAKE("waz"), LINE("linia"), SQUARE("kwadrat");
 	
 	String label;
