@@ -6,29 +6,28 @@
 
 	<ui:image field="loadergif" src="../bundle/images/ajax-loader-big.gif" />
 	<ui:style>
-		@sprite .loader {
+		@sprite .loadimg {
 			gwt-image: "loadergif";
 			margin:auto;
-			margin-top: 30px;
+			margin-top: 10;
 		}
-		.important{
+		.centerstyle{
 			text-align: center;
 			padding-top: 20px;
 		}
 	</ui:style>
-<!-- 	<ui:with field='res' type='app.gxt.client.bundle.AppBundle' /> -->
 	
 
-	<gxt:Window ui:field="window" pixelSize="335, 210" modal="true"
+	<gxt:Window ui:field="panelWindow" pixelSize="335, 210" modal="true"
 		blinkModal="true" closable="false">
 		<gxt:ContentPanel headerVisible="false">
-			<g:HTML styleName="{style.important}">
-						<span class="{style.important}" ui:field="span" />
-						<div class='{style.loader}' />
+			<g:HTML styleName="{style.centerstyle}">
+						<div  ui:field="info" />
+						<div class='{style.loadimg}' />
 			</g:HTML>
 		</gxt:ContentPanel>
 		<gxt:button>
-			<button:TextButton ui:field="closeButton" text="Close" />
+			<button:TextButton ui:field="close" text="Close" />
 		</gxt:button>
 	</gxt:Window>
 

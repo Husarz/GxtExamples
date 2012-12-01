@@ -26,7 +26,7 @@ import com.sencha.gxt.widget.core.client.event.SelectEvent.SelectHandler;
 public class Gxt1 implements EntryPoint {
 
 	AppServiceAsync service = (AppServiceAsync) GWT.create(AppService.class);
-	Info info = InfoImpl.getInst();
+	Info info = InfoImpl.getInstInfo();
 
 	User user = new User("adi", "adi@adi.pl", "123456");
 	
@@ -50,7 +50,7 @@ public class Gxt1 implements EntryPoint {
 				service.infoText(result, callback);
 			
 			else {
-				info.setClosealbe(true);
+				info.setClosealbeWindow(true);
 			}
 		}
 	};
@@ -59,7 +59,7 @@ public class Gxt1 implements EntryPoint {
 
 		@Override
 		public void onSuccess(String result) {
-			info.setTextInfo(result);
+			info.setInfo(result);
 			Gxt1.this.result = result;
 			t.schedule(3000);
 			
@@ -67,7 +67,7 @@ public class Gxt1 implements EntryPoint {
 
 		@Override
 		public void onFailure(Throwable caught) {
-			info.setTextInfo("zawiodlo");
+			info.setInfo("zawiodlo");
 
 		}
 	};
@@ -80,7 +80,7 @@ public class Gxt1 implements EntryPoint {
 			@Override
 			public void onSelect(SelectEvent event) {
 				
-				info.setTextInfo("Sprawdzam ..... !!!");
+				info.setInfo("Sprawdzam ..... !!!");
 				service.infoText("Sprawdzam ..... !!!", callback);
 				
 			}

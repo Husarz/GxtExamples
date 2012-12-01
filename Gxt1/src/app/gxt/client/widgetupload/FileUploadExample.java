@@ -28,7 +28,7 @@ import com.sencha.gxt.widget.core.client.form.validator.RegExValidator;
 public class FileUploadExample implements IsWidget {
 
 	private FramedPanel panel;
-	Info info = InfoImpl.getInst();
+	Info info = InfoImpl.getInstInfo();
 	RegExValidator myEmailValidator = new RegExValidator(
 			"^(\\w+)([-+.][\\w]+)*@(\\w[-\\w]*\\.){1,5}([A-Za-z]){2,4}$", 
 			"zly format Email");
@@ -77,8 +77,8 @@ public class FileUploadExample implements IsWidget {
 						file.reset();
 					}
 					else{
-						info.setTextInfo("plik :'"+file.getValue()+"'");
-						info.closeInfo();
+						info.setInfo("plik :'"+file.getValue()+"'");
+						info.closeWindowInfo();
 					}
 
 				}

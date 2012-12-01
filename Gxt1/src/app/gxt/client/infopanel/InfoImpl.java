@@ -3,7 +3,7 @@ package app.gxt.client.infopanel;
 
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.SpanElement;
+import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -28,14 +28,14 @@ public class InfoImpl implements IsWidget, Info{
 		SafeHtml setText(String text);
 	}
 
-	private static final Info INST = new InfoImpl();
+	private static final Info INSTANCE = new InfoImpl();
 	
-	@UiField Window window;
+	@UiField Window panelWindow;
 //	@UiField HTML info;
-	@UiField SpanElement span;
-	@UiField TextButton closeButton;
+	@UiField DivElement info;
+	@UiField TextButton close;
 	
-	Widget widget=null;
+	IsWidget isWidget=null;
 	
 	Info panel;
 	
@@ -48,46 +48,46 @@ public class InfoImpl implements IsWidget, Info{
 	}
 
 	public Widget asWidget() {
-		widget = uiBinder.createAndBindUi(this);
+		isWidget = uiBinder.createAndBindUi(this);
 		template = GWT.<HelloTemplate>create(HelloTemplate.class);
-		closeButton.disable();
-		return widget;
+		close.disable();
+		return (Widget)isWidget;
 		
 	}
 	
-	public Widget asCloseableWidget() {
+	public IsWidget asCloseableWidget() {
 		template = GWT.<HelloTemplate>create(HelloTemplate.class);
-		return widget = uiBinder.createAndBindUi(this);
+		return isWidget = uiBinder.createAndBindUi(this);
 	}
 
 
-	@UiHandler("closeButton")
+	@UiHandler("close")
 	public void onCloseButtonClicked(SelectEvent event) {
-		closeInfo();
+		closeWindowInfo();
 	}
 
 	@Override
-	public void setTextInfo(String text) {
-		if(widget==null)
+	public void setInfo(String text) {
+		if(isWidget==null)
 			asWidget();
-		if(widget!=null){
-			span.setInnerSafeHtml(getUpdatedPanel(text));
-			if (!isVisibleInfo())
-				window.show();
+		if(isWidget!=null){
+			info.setInnerSafeHtml(getUpdatedPanel(text));
+			if (!isVisibleWindowInfo())
+				panelWindow.show();
 		}
 	}
 
 	@Override
-	public void closeInfo() {
-		if(widget!=null)
-			window.hide();
-		widget = null;
+	public void closeWindowInfo() {
+		if(isWidget!=null)
+			panelWindow.hide();
+		isWidget = null;
 	}
 
 	@Override
-	public boolean isVisibleInfo() {
-		if (widget!=null)
-			return window.isVisible();
+	public boolean isVisibleWindowInfo() {
+		if (isWidget!=null)
+			return panelWindow.isVisible();
 		return false;
 	}
 	
@@ -95,14 +95,14 @@ public class InfoImpl implements IsWidget, Info{
 		return template.setText(text);
 	}
 
-	public static Info getInst() {
-		return INST;
+	public static Info getInstInfo() {
+		return INSTANCE;
 	}
 
 	@Override
-	public void setClosealbe(boolean b) {
-		if (widget!=null)
-			closeButton.enable();
+	public void setClosealbeWindow(boolean b) {
+		if (isWidget!=null)
+			close.enable();
 	}
 
 }

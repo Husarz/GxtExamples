@@ -3,9 +3,9 @@ package app.gxt.client.infopanel;
 
 public interface Info {
 	
-	void setTextInfo(String text);
-	void closeInfo();
-	boolean isVisibleInfo();
-	void setClosealbe(boolean b);
+	void setInfo(String text);
+	void closeWindowInfo();
+	boolean isVisibleWindowInfo();
+	void setClosealbeWindow(boolean b);
 
 }
