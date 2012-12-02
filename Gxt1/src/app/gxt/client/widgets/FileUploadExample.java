@@ -1,4 +1,4 @@
-package app.gxt.client.widgetupload;
+package app.gxt.client.widgets;
 
 import app.gxt.client.bundle.AppBundle;
 import app.gxt.client.infopanel.Info;

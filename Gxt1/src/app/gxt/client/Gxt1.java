@@ -1,12 +1,11 @@
 package app.gxt.client;
 
 
-import app.gxt.client.bindsforms.UserBindForm;
-import app.gxt.client.bindsforms.UserBindView;
 import app.gxt.client.infopanel.Info;
 import app.gxt.client.infopanel.InfoImpl;
 import app.gxt.client.service.AppService;
 import app.gxt.client.service.AppServiceAsync;
+import app.gxt.client.widgets.RichTabs;
 import app.gxt.shared.model.User;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -34,21 +33,22 @@ public class Gxt1 implements EntryPoint {
 		// MessageBox popup = new MessageBox("OK", "Hello World");
 		// RootPanel.get().add(popup);
 		// popup.show();
-		UserBindView view = new UserBindForm();
+//		UserBindView view = new UserBindForm();
 
 //		RootPanel.get().add(new FileUploadExample().asWidget());
 //		RootPanel.get().add(new GridImpl().asWidget());
-		RootPanel.get().add(view.asWidget());
-		view.setData(user);
+//		RootPanel.get().add(view.asWidget());
+		RootPanel.get().add(new RichTabs());
+//		view.setData(user);
 	}
 
 	String result;
 	Timer t = new Timer() {
 		@Override
 		public void run() {
-			if (!result.equalsIgnoreCase("koniec."))
+			if (!result.equalsIgnoreCase("koniec.")){
 				service.infoText(result, callback);
-			
+			}
 			else {
 				info.setClosealbeWindow(true);
 			}

@@ -4,7 +4,7 @@
 	xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
 	xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button">
 
-	<ui:image field="loadergif" src="../bundle/images/ajax-loader-big.gif" />
+	<ui:image field="loadergif" src="../bundle/images/ajax-loader-1.gif" />
 	<ui:style>
 		@sprite .loadimg {
 			gwt-image: "loadergif";

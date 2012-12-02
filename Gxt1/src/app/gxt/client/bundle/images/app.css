@@ -3,3 +3,7 @@
 @sprite .content {
 	gwt-image: 'ajaxLoaderBig';
 }
+
+@sprite .plus {
+	gwt-image: 'plusIcon';
+}

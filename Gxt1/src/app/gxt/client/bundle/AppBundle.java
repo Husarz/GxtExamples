@@ -11,6 +11,7 @@ public interface AppBundle extends ClientBundle {
 	
 	interface AppCss extends CssResource{
 		String content();
+		String plus();
 	}
 
 	@Source("app/gxt/client/bundle/images/ajax-loader-big.gif")
@@ -27,5 +28,8 @@ public interface AppBundle extends ClientBundle {
 
 	@Source("app/gxt/client/bundle/images/ajax-loader-1.gif")
 	ImageResource ajaxLoader1();
+
+	@Source("app/gxt/client/bundle/images/plusIcon.gif")
+	ImageResource plusIcon();
 
 }
