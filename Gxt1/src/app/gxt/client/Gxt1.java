@@ -5,7 +5,6 @@ import app.gxt.client.infopanel.Info;
 import app.gxt.client.infopanel.InfoImpl;
 import app.gxt.client.service.AppService;
 import app.gxt.client.service.AppServiceAsync;
-import app.gxt.client.widgets.RichTabs;
 import app.gxt.shared.model.User;
 
 import com.google.gwt.core.client.EntryPoint;

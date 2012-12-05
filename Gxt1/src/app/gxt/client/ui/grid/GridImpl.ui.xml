@@ -9,8 +9,8 @@
 	xmlns:tb="urn:import:com.sencha.gxt.widget.core.client.toolbar"
 	xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid">
 
-	<ui:style>
-		
+	<ui:style type="app.gxt.client.ui.grid.GridImpl.GridStyle">
+		.grayrow td { background-color:#696969; border: 1px solid black; }
 	</ui:style>
 
 	<ui:with type="com.sencha.gxt.core.client.util.Margins" field="centerMargins">

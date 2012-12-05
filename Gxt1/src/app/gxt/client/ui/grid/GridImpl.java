@@ -6,8 +6,8 @@ import java.util.List;
 import app.gxt.shared.model.AppModel;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.Style.Cursor;
 import com.google.gwt.editor.client.Editor.Path;
+import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
@@ -20,7 +20,7 @@ import com.sencha.gxt.data.shared.PropertyAccess;
 import com.sencha.gxt.widget.core.client.grid.ColumnConfig;
 import com.sencha.gxt.widget.core.client.grid.ColumnModel;
 import com.sencha.gxt.widget.core.client.grid.Grid;
-import com.sencha.gxt.widget.core.client.grid.GridView;
+import com.sencha.gxt.widget.core.client.grid.GridViewConfig;
 
 public class GridImpl implements IsWidget {
 
@@ -29,7 +29,13 @@ public class GridImpl implements IsWidget {
 
 	interface GridImplUiBinder extends UiBinder<Widget, GridImpl> {
 	}
+	
+	interface GridStyle extends CssResource{
+		String grayrow();
+	}
 
+	@UiField GridStyle style;
+	
 	@UiField
 	ColumnModel<AppModel> cm;
 
@@ -38,9 +44,9 @@ public class GridImpl implements IsWidget {
 
 	@UiField
 	Grid<AppModel> grid;
-
-	@UiField
-	GridView<AppModel> view;
+//
+//	@UiField
+//	GridView<AppModel> view;
 
 	ModelProp prop = GWT.create(ModelProp.class);
 
@@ -62,10 +68,23 @@ public class GridImpl implements IsWidget {
 	public Widget asWidget() {
 		implGird();
 		Widget widget = uiBinder.createAndBindUi(this);
-		view.getRow(1).getStyle().setBackgroundColor("red");
-		view.getRow(1).getStyle().setColor("red");
-		view.getRow(1).getStyle().setBorderColor("black");
-		view.getRow(1).getStyle().setCursor(Cursor.WAIT);
+		grid.getView().setViewConfig(new GridViewConfig<AppModel>() {
+			
+			@Override
+			public String getRowStyle(AppModel model, int rowIndex) {
+				if (rowIndex == 1)
+					return style.grayrow();
+				return null;
+			}
+			
+			@Override
+			public String getColStyle(AppModel model,
+					ValueProvider<? super AppModel, ?> valueProvider, int rowIndex,
+					int colIndex) {
+				
+				return null;
+			}
+		});
 		return widget;
 	}
 
@@ -79,10 +98,6 @@ public class GridImpl implements IsWidget {
 		return store;
 	}
 	
-//	@UiFactory
-//	GridView<AppModel> createView(){
-//		return view;
-//	}
 
 	private void implGird(){
 		ColumnConfig<AppModel, String> nameCol = 
@@ -101,10 +116,10 @@ public class GridImpl implements IsWidget {
 		store = new ListStore<AppModel>(prop.key());
 		for(AppModel model: AppModel.values()){
 			store.add(model);
-//			if(model == AppModel.LINE)
-				
-
 		}
+		
+		
+		
 	}
 
 }

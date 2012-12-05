@@ -4,6 +4,7 @@ import app.gxt.client.infopanel.InfoImpl;
 import app.gxt.client.ui.forms.TestForm;
 import app.gxt.client.ui.grid.GridImpl;
 import app.gxt.client.widgets.RichTabs;
+import app.gxt.client.windows.MessageBoxExample;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.RunAsyncCallback;
@@ -28,7 +29,7 @@ public class MainPanel extends Composite {
 	}
 
 	@UiField BorderLayoutContainer con;
-	@UiField TextButton but1, but2, but3, but4;
+	@UiField TextButton but1, but2, but3, but4, but5;
 	@UiField ContentPanel cp;
 	
 	public MainPanel() {
@@ -55,7 +56,7 @@ public class MainPanel extends Composite {
 		cp.add(widget);
 	}
 	
-	@UiHandler({"but1", "but2", "but3", "but4"})
+	@UiHandler({"but1", "but2", "but3", "but4", "but5"})
 	void clikbut(SelectEvent event){
 		Info.display("Click", ((TextButton) event.getSource()).getText() + " clicked");
 		TextButton b = (TextButton) event.getSource();
@@ -71,7 +72,9 @@ public class MainPanel extends Composite {
 		}
 		if ( b==but4 ){
 			simpleAddWidget(new TestForm());
-
+		}
+		if ( b==but5 ){
+			simpleAddWidget(new MessageBoxExample().asWidget());
 		}
 	}
 
