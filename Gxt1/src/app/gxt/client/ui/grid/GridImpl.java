@@ -1,4 +1,4 @@
-package app.gxt.client.infopanel.grid;
+package app.gxt.client.ui.grid;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 import app.gxt.shared.model.AppModel;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.Cursor;
 import com.google.gwt.editor.client.Editor.Path;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiFactory;
@@ -61,6 +62,10 @@ public class GridImpl implements IsWidget {
 	public Widget asWidget() {
 		implGird();
 		Widget widget = uiBinder.createAndBindUi(this);
+		view.getRow(1).getStyle().setBackgroundColor("red");
+		view.getRow(1).getStyle().setColor("red");
+		view.getRow(1).getStyle().setBorderColor("black");
+		view.getRow(1).getStyle().setCursor(Cursor.WAIT);
 		return widget;
 	}
 
@@ -73,6 +78,11 @@ public class GridImpl implements IsWidget {
 	ListStore<AppModel> createListStore() {
 		return store;
 	}
+	
+//	@UiFactory
+//	GridView<AppModel> createView(){
+//		return view;
+//	}
 
 	private void implGird(){
 		ColumnConfig<AppModel, String> nameCol = 
@@ -91,7 +101,9 @@ public class GridImpl implements IsWidget {
 		store = new ListStore<AppModel>(prop.key());
 		for(AppModel model: AppModel.values()){
 			store.add(model);
-//			model.
+//			if(model == AppModel.LINE)
+				
+
 		}
 	}
 

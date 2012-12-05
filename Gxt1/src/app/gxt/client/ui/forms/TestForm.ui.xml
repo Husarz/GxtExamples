@@ -1,0 +1,41 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:c="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button">
+	<ui:style>
+		
+	</ui:style>
+
+	<ui:with
+		type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+		field="verticalLayoutData">
+		<ui:attributes width="1" height="-1" />
+	</ui:with>
+
+	<c:FramedPanel headingText="Simple Form" width="350"
+		bodyStyle="background: none; padding: 5px">
+		<container:VerticalLayoutContainer>
+			<container:child layoutData="{verticalLayoutData}">
+				<form:FieldLabel text="Name">	
+					<form:widget>
+						<form:TextField ui:field="firstName" allowBlank="false" 
+							emptyText="Enter your name..." />
+					</form:widget>
+				</form:FieldLabel>
+			</container:child>
+			
+			<container:child layoutData="{verticalLayoutData}">
+				<form:FieldLabel text="Color">
+					<form:widget>
+						<g:HorizontalPanel>
+							<form:Radio ui:field="radio" boxLabel="Red" />
+							<form:Radio ui:field="radio2" boxLabel="Blue" value="true" />
+						</g:HorizontalPanel>
+					</form:widget>
+				</form:FieldLabel>
+			</container:child>
+		</container:VerticalLayoutContainer>
+	</c:FramedPanel>
+</ui:UiBinder> 

@@ -38,7 +38,9 @@ public class Gxt1 implements EntryPoint {
 //		RootPanel.get().add(new FileUploadExample().asWidget());
 //		RootPanel.get().add(new GridImpl().asWidget());
 //		RootPanel.get().add(view.asWidget());
-		RootPanel.get().add(new RichTabs());
+//		RootPanel.get().add(new RichTabs());
+		RootPanel.get().add(new MainPanel());
+		
 //		view.setData(user);
 	}
 
