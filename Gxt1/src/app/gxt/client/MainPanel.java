@@ -29,7 +29,7 @@ public class MainPanel extends Composite {
 	}
 
 	@UiField BorderLayoutContainer con;
-	@UiField TextButton but1, but2, but3, but4, but5;
+	@UiField TextButton but1, but2, but3, but4, but5, but6;
 	@UiField ContentPanel cp;
 	
 	public MainPanel() {
@@ -56,7 +56,7 @@ public class MainPanel extends Composite {
 		cp.add(widget);
 	}
 	
-	@UiHandler({"but1", "but2", "but3", "but4", "but5"})
+	@UiHandler({"but1", "but2", "but3", "but4", "but5", "but6"})
 	void clikbut(SelectEvent event){
 		Info.display("Click", ((TextButton) event.getSource()).getText() + " clicked");
 		TextButton b = (TextButton) event.getSource();
@@ -75,6 +75,9 @@ public class MainPanel extends Composite {
 		}
 		if ( b==but5 ){
 			simpleAddWidget(new MessageBoxExample().asWidget());
+		}
+		if ( b==but6){
+			simpleAddWidget(new RichTabs());
 		}
 	}
 

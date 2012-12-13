@@ -4,6 +4,7 @@ import app.gxt.client.bundle.AppBundle;
 
 import com.google.gwt.event.logical.shared.SelectionEvent;
 import com.google.gwt.event.logical.shared.SelectionHandler;
+import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -33,8 +34,11 @@ public class RichTabs extends TabPanel{
 		tabPlus.setIcon(AppBundle.INST.plusIcon());
 		
 		panelplus = new SimplePanel();
-		
+
 		add(panelplus, tabPlus);
+		
+		DOM.setStyleAttribute(findItem(getWidgetIndex(panelplus)), "cursor", "pointer");
+		DOM.setStyleAttribute(findItem(getWidgetIndex(panelplus)), "width", "28px");
 		
 		addSelectionHandler(new SelectionHandler<Widget>() {
 			

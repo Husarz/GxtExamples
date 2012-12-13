@@ -11,6 +11,7 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.rpc.ServiceDefTarget;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -39,7 +40,7 @@ public class Gxt1 implements EntryPoint {
 //		RootPanel.get().add(view.asWidget());
 //		RootPanel.get().add(new RichTabs());
 		RootPanel.get().add(new MainPanel());
-		
+//		System.out.println(target.);
 //		view.setData(user);
 	}
 

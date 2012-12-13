@@ -67,6 +67,7 @@
 								<td> <b:TextButton ui:field="but3">grid</b:TextButton> </td>
 								<td> <b:TextButton ui:field="but4">test form</b:TextButton> </td>
 								<td> <b:TextButton ui:field="but5">Message</b:TextButton> </td>
+								<td> <b:TextButton ui:field="but6">richTabs</b:TextButton> </td>
 							</tr></table>
 						</g:HTMLPanel>
 					</gxt:ContentPanel>
