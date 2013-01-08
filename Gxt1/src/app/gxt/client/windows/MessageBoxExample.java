@@ -1,5 +1,9 @@
 package app.gxt.client.windows;
 
+import com.google.gwt.event.dom.client.DoubleClickEvent;
+import com.google.gwt.event.dom.client.DoubleClickHandler;
+import com.google.gwt.user.client.Event;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.sencha.gxt.widget.core.client.Dialog.PredefinedButton;
@@ -15,6 +19,44 @@ import com.sencha.gxt.widget.core.client.event.SelectEvent.SelectHandler;
 
 public class MessageBoxExample implements IsWidget {
 
+	public static class MyButton extends TextButton{
+		public MyButton() {
+			super("custom");
+			
+			addHandler(new DoubleClickHandler(){
+
+				@Override
+				public void onDoubleClick(DoubleClickEvent event) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+			}, DoubleClickEvent.getType());
+			
+//			sinkEvents(Event.ONDBLCLICK);
+//			addDomHandler(new DoubleClickHandler(){
+//
+//				@Override
+//				public void onDoubleClick(DoubleClickEvent event) {
+//					Window.alert("Double click");
+//					
+//				}
+//				
+//			}, DoubleClickEvent.getType());
+		}
+		
+		@Override
+		public void onBrowserEvent(Event event) {
+			super.onBrowserEvent(event);
+//			if (DOM.eventGetType(event) == Event.ONCLICK) {
+//				Window.alert("Single click");
+//			}
+//			if (DOM.eventGetType(event) == Event.ONDBLCLICK) {
+//				Window.alert("Double click");
+//			}
+		}
+	}
+	
 	@Override
 	public Widget asWidget() {
 
@@ -46,6 +88,9 @@ public class MessageBoxExample implements IsWidget {
 
 			}
 		});
+		
+
+		
 		bar.add(b);
 
 		b = new TextButton("Prompt");
@@ -78,7 +123,23 @@ public class MessageBoxExample implements IsWidget {
 			}
 		});
 		bar.add(b);
+		
+		b = new TextButton("Double click");
+		
+		b.addDomHandler(new DoubleClickHandler(){
 
+			@Override
+			public void onDoubleClick(DoubleClickEvent event) {
+				Window.alert("Double click");
+				
+			}
+			
+		}, DoubleClickEvent.getType());
+		bar.add(b);
+
+		b = new MyButton();
+		bar.add(b);
+		
 		return bar;
 	}
 

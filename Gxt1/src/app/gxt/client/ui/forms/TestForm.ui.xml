@@ -36,6 +36,10 @@
 					</form:widget>
 				</form:FieldLabel>
 			</container:child>
+			
+			<container:child layoutData="{verticalLayoutData}">
+				<g:Label ui:field="label">label</g:Label>
+			</container:child>
 		</container:VerticalLayoutContainer>
 	</c:FramedPanel>
 </ui:UiBinder> 
