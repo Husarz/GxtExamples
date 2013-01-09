@@ -4,6 +4,7 @@ import app.gxt.client.infopanel.InfoImpl;
 import app.gxt.client.layout.verticalPanel;
 import app.gxt.client.ui.forms.TestForm;
 import app.gxt.client.ui.grid.GridImpl;
+import app.gxt.client.widgets.AreaTextWidget;
 import app.gxt.client.widgets.RichTabs;
 import app.gxt.client.windows.MessageBoxExample;
 
@@ -30,7 +31,7 @@ public class MainPanel extends Composite {
 	}
 
 	@UiField BorderLayoutContainer con;
-	@UiField TextButton but1, but2, but3, but4, but5, but6, but7;
+	@UiField TextButton but1, but2, but3, but4, but5, but6, but7, but8;
 	@UiField ContentPanel cp;
 	
 	public MainPanel() {
@@ -57,7 +58,7 @@ public class MainPanel extends Composite {
 		cp.add(widget);
 	}
 	
-	@UiHandler({"but1", "but2", "but3", "but4", "but5", "but6", "but7"})
+	@UiHandler({"but1", "but2", "but3", "but4", "but5", "but6", "but7", "but8"})
 	void clikbut(SelectEvent event){
 		Info.display("Click", ((TextButton) event.getSource()).getText() + " clicked");
 		TextButton b = (TextButton) event.getSource();
@@ -82,6 +83,9 @@ public class MainPanel extends Composite {
 		}
 		if ( b==but7){
 			simpleAddWidget(new verticalPanel());
+		}
+		if ( b==but8){
+			new AreaTextWidget().showWindow();
 		}
 	}
 

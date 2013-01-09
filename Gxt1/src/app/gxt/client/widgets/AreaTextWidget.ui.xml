@@ -1,0 +1,45 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" xmlns:tree="urn:import:com.sencha.gxt.widget.core.client.tree"
+	xmlns:b="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:my="urn:import:app.gxt.client.richtext">
+	<ui:style>
+		
+	</ui:style>
+	<ui:with field="themeStyles"
+		type="com.sencha.gxt.core.client.resources.ThemeStyles.Styles" />
+
+	<ui:with type="com.sencha.gxt.core.client.util.Margins" field="areaMargins">
+		<ui:attributes top="4" right="0" bottom="4" left="0" />
+	</ui:with>
+
+	<ui:with type="com.sencha.gxt.core.client.util.Margins" field="sideMargins">
+		<ui:attributes top="4" right="4" bottom="4" left="4" />
+	</ui:with>
+
+	<ui:with
+		type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData"
+		field="areaLayoutData">
+		<ui:attributes width="1" height="1" margins="{areaMargins}" />
+	</ui:with>
+
+	<ui:with
+		type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData"
+		field="sideLayoutData">
+		<ui:attributes width="-1" height="1" margins="{sideMargins}" />
+	</ui:with>
+
+	<gxt:Window pixelSize="400, 300" ui:field="window">
+		<container:HorizontalLayoutContainer>
+			<container:child layoutData="{areaLayoutData}">
+				<my:RichTextArea addStyleNames="pad-text, white-bg, {themeStyles.border}" ui:field="textArea" />
+<!-- 				<g:Label text="Test Label area" addStyleNames="pad-text, white-bg, {themeStyles.border}" /> -->
+			</container:child>
+			<container:child layoutData="{sideLayoutData}">
+				<g:Label text="Test Label widgets" addStyleNames="pad-text, white-bg, {themeStyles.border}" />
+			</container:child>
+		</container:HorizontalLayoutContainer>
+		
+	</gxt:Window>
+</ui:UiBinder> 
