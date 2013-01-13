@@ -7,7 +7,7 @@ public enum AppModel implements IsSerializable{
 	
 	String label;
 	
-	private AppModel(String label) {
+	AppModel(String label) {
 		this.label=label;
 	}
 

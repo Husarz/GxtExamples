@@ -7,13 +7,13 @@ import com.google.gwt.user.client.rpc.IsSerializable;
 
 public class StoreAppModel implements IsSerializable{
 
-	List<AppModel> storeApps = new ArrayList<AppModel>();
+	List<Model> storeApps = new ArrayList<Model>();
 	String textArea = "co jest cholera?";
 	
 	public StoreAppModel() {
 	}
 	
-	public void addStoreApps(AppModel app){
+	public void addStoreApps(Model app){
 		storeApps.add(app);
 	}
 	
@@ -21,10 +21,10 @@ public class StoreAppModel implements IsSerializable{
 		return storeApps.remove(app);
 	}
  	
-	public List<AppModel> getStoreApps() {
+	public List<Model> getStoreApps() {
 		return storeApps;
 	}
-	public void setStoreApps(List<AppModel> storeApps) {
+	public void setStoreApps(List<Model> storeApps) {
 		this.storeApps = storeApps;
 	}
 	public String getTextArea() {
@@ -34,5 +34,19 @@ public class StoreAppModel implements IsSerializable{
 		this.textArea = textArea;
 	}
 	
+	
+	public static void initSotore(StoreAppModel appModel){
+		List<Model> store = appModel.getStoreApps();
+		
+		store.add(new Model(AppModel.LINE, "line", 3));
+		store.add(new Model(AppModel.SNAKE, "qwerty", 5));
+		store.add(new Model(AppModel.SQUARE, "qw1234", 5));
+		store.add(new Model(AppModel.LINE, "xcz", 4));
+		store.add(new Model(AppModel.SNAKE, "vds", 3));
+		store.add(new Model(AppModel.SQUARE, "nfn", 6));
+		store.add(new Model(AppModel.LINE, "sdfs", 8));
+		store.add(new Model(AppModel.SNAKE, "sefg", 5));
+		store.add(new Model(AppModel.SQUARE, "hyfnh", 7));
+	}
 	
 }
