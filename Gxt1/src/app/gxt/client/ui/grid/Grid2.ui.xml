@@ -47,7 +47,7 @@
 
 
 	<gxt:FramedPanel ui:field="panel" headingText="Grid UiBinder Example"
-		pixelSize="600, 300" collapsible="true" addStyleNames="margin-10">
+		pixelSize="700, 300" collapsible="true" addStyleNames="margin-10">
 		<row:HorizontalLayoutContainer>
 			<row:child layoutData="{sideLayoutData}">
 				<row:VerticalLayoutContainer borders="true"
@@ -59,11 +59,7 @@
 						</grid:Grid>
 					</row:child>
 					<row:child layoutData="{bottomData}">
-						<!-- <button:TextButton>middleData</button:TextButton> -->
-						<g:Label title="label1">LAbel1</g:Label>
-					</row:child>
-					<row:child layoutData="{bottomData}">
-						<button:TextButton>bottomData</button:TextButton>
+						<button:TextButton ui:field="del" text="del" />
 					</row:child>
 				</row:VerticalLayoutContainer>
 			</row:child>
@@ -89,6 +85,21 @@
 								<form:NumberField ui:field="count" allowBlank="false" />
 							</form:widget>
 						</form:FieldLabel>
+					</row:child>
+					<row:child>
+						<tb:ToolBar >
+								<button:TextButton ui:field="add" text="add" />
+						</tb:ToolBar>
+					</row:child>
+					<row:child>
+						<tb:ToolBar >
+								<button:TextButton ui:field="changes" text="changes" />
+								<button:TextButton ui:field="commit" text="commit" />
+								<button:TextButton ui:field="init" text="Init obj" />
+						</tb:ToolBar>
+					</row:child>
+					<row:child>
+						<form:NumberField ui:field="count2" allowBlank="false" />
 					</row:child>
 				</row:VerticalLayoutContainer>
 			</row:child>

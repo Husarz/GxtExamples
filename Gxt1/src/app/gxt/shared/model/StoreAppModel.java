@@ -43,10 +43,6 @@ public class StoreAppModel implements IsSerializable{
 		store.add(new Model(AppModel.SQUARE, "qw1234", 5));
 		store.add(new Model(AppModel.LINE, "xcz", 4));
 		store.add(new Model(AppModel.SNAKE, "vds", 3));
-		store.add(new Model(AppModel.SQUARE, "nfn", 6));
-		store.add(new Model(AppModel.LINE, "sdfs", 8));
-		store.add(new Model(AppModel.SNAKE, "sefg", 5));
-		store.add(new Model(AppModel.SQUARE, "hyfnh", 7));
 	}
 	
 }

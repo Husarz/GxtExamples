@@ -70,7 +70,8 @@
 								<td> <b:TextButton ui:field="but6">richTabs</b:TextButton> </td>
 								<td> <b:TextButton ui:field="but7">richTabs</b:TextButton> </td>
 								<td> <b:TextButton ui:field="but8">areaText</b:TextButton> </td>
-								<td> <b:TextButton ui:field="but9">areaText</b:TextButton> </td>
+								<td> <b:TextButton ui:field="but9">grid2</b:TextButton> </td>
+								<td> <b:TextButton ui:field="but10">test</b:TextButton> </td>
 							</tr></table>
 						</g:HTMLPanel>
 					</gxt:ContentPanel>
