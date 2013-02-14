@@ -6,6 +6,7 @@ public enum AppModel implements IsSerializable{
 	SNAKE("waz"), LINE("linia"), SQUARE("kwadrat");
 	
 	String label;
+	Boolean bool = false;
 	
 	AppModel(String label) {
 		this.label=label;
@@ -13,5 +14,9 @@ public enum AppModel implements IsSerializable{
 
 	public String getLabel() {
 		return label;
+	}
+	
+	public Boolean isBool(){
+		return bool;
 	}
 }

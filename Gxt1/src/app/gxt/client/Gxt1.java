@@ -1,8 +1,8 @@
 package app.gxt.client;
 
-
 import app.gxt.client.infopanel.Info;
 import app.gxt.client.infopanel.InfoImpl;
+import app.gxt.client.layout.MyContentPanel;
 import app.gxt.client.service.AppService;
 import app.gxt.client.service.AppServiceAsync;
 import app.gxt.shared.model.User;
@@ -11,7 +11,6 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.rpc.ServiceDefTarget;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -30,18 +29,10 @@ public class Gxt1 implements EntryPoint {
 	User user = new User("adi", "adi@adi.pl", "123456");
 	
 	public void onModuleLoad() {
-		// MessageBox popup = new MessageBox("OK", "Hello World");
-		// RootPanel.get().add(popup);
-		// popup.show();
-//		UserBindView view = new UserBindForm();
 
-//		RootPanel.get().add(new FileUploadExample().asWidget());
-//		RootPanel.get().add(new GridImpl().asWidget());
-//		RootPanel.get().add(view.asWidget());
-//		RootPanel.get().add(new RichTabs());
-		RootPanel.get().add(new MainPanel());
-//		System.out.println(target.);
-//		view.setData(user);
+//		RootPanel.get().add(new MainPanel());
+		
+		RootPanel.get().add(new MyContentPanel());
 	}
 
 	String result;

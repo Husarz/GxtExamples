@@ -13,10 +13,13 @@ import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
+import com.sencha.gxt.core.client.IdentityValueProvider;
+import com.sencha.gxt.core.client.Style.SelectionMode;
 import com.sencha.gxt.core.client.ValueProvider;
 import com.sencha.gxt.data.shared.ListStore;
 import com.sencha.gxt.data.shared.ModelKeyProvider;
 import com.sencha.gxt.data.shared.PropertyAccess;
+import com.sencha.gxt.widget.core.client.grid.CheckBoxSelectionModel;
 import com.sencha.gxt.widget.core.client.grid.ColumnConfig;
 import com.sencha.gxt.widget.core.client.grid.ColumnModel;
 import com.sencha.gxt.widget.core.client.grid.Grid;
@@ -62,6 +65,9 @@ public class GridImpl implements IsWidget {
 		ValueProvider<AppModel, String> label();
 	}
 	  
+	IdentityValueProvider<AppModel> identity = new IdentityValueProvider<AppModel>();
+	final CheckBoxSelectionModel<AppModel> sm = new CheckBoxSelectionModel<AppModel>(identity);
+	
 	public GridImpl() {}
 	
 	@Override
@@ -85,6 +91,9 @@ public class GridImpl implements IsWidget {
 				return null;
 			}
 		});
+		
+		grid.setSelectionModel(sm);
+		sm.setSelectionMode(SelectionMode.SINGLE);
 		return widget;
 	}
 
@@ -104,21 +113,20 @@ public class GridImpl implements IsWidget {
 				new ColumnConfig<AppModel, String>(prop.name(), 50, "Model");
 		ColumnConfig<AppModel, String> valCol = 
 				new ColumnConfig<AppModel, String>(prop.value(), 50, "value");
-		ColumnConfig<AppModel, String> labCol = 
-				new ColumnConfig<AppModel, String>(prop.label(), 50, "value");
+//		ColumnConfig<AppModel, String> labCol = 
+//				new ColumnConfig<AppModel, String>(prop.label(), 50, "value");
 		
 		List<ColumnConfig<AppModel, ?>> list = new ArrayList<ColumnConfig<AppModel, ?>>();
 		list.add(nameCol);
 		list.add(valCol);
-		list.add(labCol);
+		list.add(sm.getColumn());
 		cm = new ColumnModel<AppModel>(list);
 		
 		store = new ListStore<AppModel>(prop.key());
 		for(AppModel model: AppModel.values()){
 			store.add(model);
 		}
-		
-		
+
 		
 	}
 

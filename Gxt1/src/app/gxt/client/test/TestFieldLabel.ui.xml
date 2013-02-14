@@ -1,0 +1,33 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" xmlns:c="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:t="urn:import:com.sencha.gxt.widget.core.client.toolbar" xmlns:b="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:f="urn:import:com.sencha.gxt.widget.core.client.form">
+	<ui:style>
+		
+	</ui:style>
+	<c:VerticalLayoutContainer>
+		<c:child>
+			<f:FieldLabel labelWidth="50" labelPad="-100" text="Name">
+				<f:widget>
+					<f:TextField width="75" ui:field="name2" allowBlank="false" />
+				</f:widget>
+			</f:FieldLabel>
+		</c:child>
+		<c:child>
+			<f:FieldLabel labelWidth="50" labelPad="-100" text="Name">
+				<f:widget>
+					<f:TextField width="75" ui:field="name3" allowBlank="false" />
+				</f:widget>
+			</f:FieldLabel>
+		</c:child>
+		<c:child>
+			<f:FieldLabel labelWidth="50" labelPad="-100" text="Name">
+				<f:widget>
+					<f:TextField width="75" ui:field="name4" allowBlank="false" />
+				</f:widget>
+			</f:FieldLabel>
+		</c:child>
+	</c:VerticalLayoutContainer>
+
+</ui:UiBinder> 
