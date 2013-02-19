@@ -17,6 +17,7 @@ public class MyContentPanel extends ContentPanel{
 		addPanel();
 		addPanel();
 		addPanel();
+//		DOM.setStyleAttribute(, "border", "1px solid black");
 		
 		this.add(vc);
 	}
@@ -29,13 +30,14 @@ public class MyContentPanel extends ContentPanel{
 
 		System.out.println(appearance.collapseIcon().getStyle());
 		
-		ContentPanel cp = new ContentPanel(appearance);
+		MyPanel panel = new MyPanel();
+		ContentPanel cp = panel.getPanel();
 //		DOM.setStyleAttribute(cp.getBody(), "float", "left !important");
 		cp.setCollapsible(true);
 //		cp.getBody().set setBodyStyle();
 //		cp.getHeader().addStyleName();
 		cp.add(v);
-		vc.add(cp, new VerticalLayoutData(0.9, -1));
+		vc.add(panel, new VerticalLayoutData(0.9, -1));
 	}
 	AccordionLayoutAppearance appearance = GWT.<AccordionLayoutAppearance> create(AccordionLayoutAppearance.class);
 	VerticalLayoutContainer vc = new VerticalLayoutContainer();
