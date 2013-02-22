@@ -14,7 +14,7 @@
 		<ui:attributes width="1" height="-1" />
 	</ui:with>
 
-	<c:FramedPanel headingText="Simple Form" width="350"
+	<c:FramedPanel headingText="Simple Form" 
 		bodyStyle="background: none; padding: 5px">
 		<container:VerticalLayoutContainer>
 			<container:child layoutData="{verticalLayoutData}">

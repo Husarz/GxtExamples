@@ -1,10 +1,7 @@
 package app.gxt.client.layout;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.HTML;
-import com.sencha.gxt.core.client.resources.ThemeStyles;
-import com.sencha.gxt.theme.gray.client.panel.GrayContentPanelAppearance;
 import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.container.AccordionLayoutContainer.AccordionLayoutAppearance;
 import com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer;

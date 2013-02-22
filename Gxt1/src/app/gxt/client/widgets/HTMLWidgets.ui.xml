@@ -1,0 +1,61 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client">
+	<ui:style>
+		
+	</ui:style>
+	
+	<ui:with
+		type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+		field="verticalLayoutData">
+		<ui:attributes width="1" height="-1" />
+	</ui:with>
+	
+	<gxt:FramedPanel headingText="Simple Form" width="350"
+		bodyStyle="background: none; padding: 5px">
+		<container:VerticalLayoutContainer>
+		
+			<container:child layoutData="{verticalLayoutData}">
+				<form:FieldLabel text="Name" labelWidth="50" >	
+					<form:widget>
+							<g:HTMLPanel>
+								<table>
+									<tr><td> 
+										<form:Radio boxLabel="Red" ui:field="r1" />
+										</td>
+										<td> wszystko </td>
+									</tr>
+									
+									<tr><td> 
+										<form:Radio boxLabel="green" ui:field="r2" />
+										</td>
+										<td>od :
+										<form:DateField ui:field="df1"/> do: 
+										<form:DateField ui:field="df2" />
+										</td>
+									</tr>
+									
+									<tr><td> 
+										<form:Radio boxLabel="blue" ui:field="r3" />
+										</td>
+										<td> <form:NumberField ui:field="num" /> 
+										</td>
+									</tr>
+								</table>
+							</g:HTMLPanel>
+					
+<!-- 						<form:TextField ui:field="firstName" allowBlank="false"  -->
+<!-- 							emptyText="Enter your name..." /> -->
+					</form:widget>
+				</form:FieldLabel>
+			</container:child>
+		
+		</container:VerticalLayoutContainer>
+	</gxt:FramedPanel>
+	
+
+</ui:UiBinder> 

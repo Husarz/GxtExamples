@@ -1,9 +1,19 @@
 @CHARSET "UTF-8";
 
+@eval groupExpand com.sencha.gxt.core.client.util.ImageHelper.createModuleBasedUrl("base/images/grid/group-expand-sprite.gif");
+
 @sprite .content {
 	gwt-image: 'ajaxLoaderBig';
 }
 
 @sprite .plus {
 	gwt-image: 'plusIcon';
+}
+
+.gridGroup .cellInner {
+  background-image: groupExpand;
+}
+
+.gridGroupCollapsed .cellInner {
+  background-position: 3px 3px;
 }

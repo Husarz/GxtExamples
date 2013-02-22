@@ -5,6 +5,7 @@ import app.gxt.client.infopanel.InfoImpl;
 import app.gxt.client.layout.MyContentPanel;
 import app.gxt.client.service.AppService;
 import app.gxt.client.service.AppServiceAsync;
+import app.gxt.client.widgets.HTMLWidgets;
 import app.gxt.shared.model.User;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -32,7 +33,9 @@ public class Gxt1 implements EntryPoint {
 
 //		RootPanel.get().add(new MainPanel());
 		
-		RootPanel.get().add(new MyContentPanel());
+//		RootPanel.get().add(new MyContentPanel());
+		RootPanel.get().add(new HTMLWidgets());
+		
 	}
 
 	String result;
