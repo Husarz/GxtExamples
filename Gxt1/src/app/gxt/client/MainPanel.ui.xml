@@ -3,7 +3,8 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
 	xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" 
-	xmlns:tree="urn:import:com.sencha.gxt.widget.core.client.tree" xmlns:b="urn:import:com.sencha.gxt.widget.core.client.button">
+	xmlns:tree="urn:import:com.sencha.gxt.widget.core.client.tree" xmlns:b="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:my="urn:import:app.gxt.client.ui.grid" >
 	<ui:style>
 		.centerMargin {
         	margin: 10px;
@@ -60,24 +61,25 @@
 			<container:BorderLayoutContainer ui:field="con" borders="true">
 				<container:north layoutData="{northData}" >
 					<gxt:ContentPanel headingText="North Example" >
-						<g:HTMLPanel>
-							<table><tr>
-								<td> <b:TextButton ui:field="but1">Info</b:TextButton> </td>
-								<td> <b:TextButton ui:field="but2">hello</b:TextButton> </td>
-								<td> <b:TextButton ui:field="but3">grid</b:TextButton> </td>
-								<td> <b:TextButton ui:field="but4">test form</b:TextButton> </td>
-								<td> <b:TextButton ui:field="but5">Message</b:TextButton> </td>
-								<td> <b:TextButton ui:field="but6">richTabs</b:TextButton> </td>
-								<td> <b:TextButton ui:field="but7">richTabs</b:TextButton> </td>
-								<td> <b:TextButton ui:field="but8">areaText</b:TextButton> </td>
-								<td> <b:TextButton ui:field="but9">grid2</b:TextButton> </td>
-								<td> <b:TextButton ui:field="but10">test</b:TextButton> </td>
-							</tr></table>
-						</g:HTMLPanel>
+<!-- 						<g:HTMLPanel> -->
+<!-- 							<table><tr> -->
+<!-- 								<td> <b:TextButton ui:field="but1">Info</b:TextButton> </td> -->
+<!-- 								<td> <b:TextButton ui:field="but2">hello</b:TextButton> </td> -->
+<!-- 								<td> <b:TextButton ui:field="but3">grid</b:TextButton> </td> -->
+<!-- 								<td> <b:TextButton ui:field="but4">test form</b:TextButton> </td> -->
+<!-- 								<td> <b:TextButton ui:field="but5">Message</b:TextButton> </td> -->
+<!-- 								<td> <b:TextButton ui:field="but6">richTabs</b:TextButton> </td> -->
+<!-- 								<td> <b:TextButton ui:field="but7">richTabs</b:TextButton> </td> -->
+<!-- 								<td> <b:TextButton ui:field="but8">areaText</b:TextButton> </td> -->
+<!-- 								<td> <b:TextButton ui:field="but9">grid2</b:TextButton> </td> -->
+<!-- 								<td> <b:TextButton ui:field="but10">test</b:TextButton> </td> -->
+<!-- 							</tr></table> -->
+<!-- 						</g:HTMLPanel> -->
 					</gxt:ContentPanel>
 				</container:north>
 				 <container:west layoutData="{westData}">
-				 	<gxt:ContentPanel headingText="Tree Example" >
+				 	<gxt:ContentPanel headingText="Tree Example" height="200" >
+				 		<my:MenuGroupGrid ui:field="menu" />
 <!-- 				 		<tree:Tree ui:field="tree" width="300"  -->
 <!-- 				 			valueProvider="{valueProvider}" store="{store}" /> -->
 				 	</gxt:ContentPanel>
