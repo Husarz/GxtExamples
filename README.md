@@ -6,7 +6,7 @@ Gxt Examples
 
 - server : writing  from Servlet Input Stream to file
 
-protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
 		ServletInputStream inputStream = req.getInputStream();
